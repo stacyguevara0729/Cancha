@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Mission — Cancha</title>
+<meta name="description" content="Cancha's mission is to provide soccer gear to children across Central America and support athletes recovering from setbacks. Learn how your donation makes a difference.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --soil:#2C1A0E;--bark:#4A2C1A;--moss:#2D5016;--grass:#4A8022;
+  --field:#6AAB2E;--lime:#9FCE5A;--cream:#F5F0E8;--sand:#EDE5D0;
+  --warm:#D4B896;--terracotta:#C4622D;--clay:#E8835A;--sun:#F2C14E;--white:#FDFAF5;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--soil);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,240,232,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(44,26,14,0.08)}
+.nav-logo{font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--moss);letter-spacing:-1px;text-decoration:none}
+.nav-logo span{color:var(--terracotta)}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--bark);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--moss)}
+.nav-links a.active{color:var(--moss);font-weight:600}
+.nav-donate{background:var(--terracotta);color:var(--white)!important;padding:10px 24px;border-radius:100px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s}
+.nav-donate:hover{background:var(--moss)!important;transform:translateY(-1px)}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.nav-mobile-btn span{display:block;width:22px;height:2px;background:var(--soil);border-radius:2px}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:99;padding:100px 32px 40px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:24px;font-family:'Fraunces',serif;font-weight:700;color:var(--soil);text-decoration:none}
+
+/* PAGE HERO */
+.page-hero{padding:140px 48px 80px;background:var(--soil);position:relative;overflow:hidden}
+.field-pattern{position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(106,171,46,0.06) 60px,rgba(106,171,46,0.06) 62px),
+  repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(106,171,46,0.06) 60px,rgba(106,171,46,0.06) 62px)}
+.page-hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:1;text-align:center}
+.breadcrumb{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--warm);margin-bottom:24px}
+.breadcrumb a{color:var(--lime);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb-sep{color:rgba(212,184,150,0.4)}
+.page-hero h1{font-family:'Fraunces',serif;font-size:clamp(48px,6vw,72px);font-weight:900;color:var(--white);line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
+.page-hero h1 em{font-style:italic;color:var(--lime);font-weight:300}
+.page-hero-sub{font-size:18px;line-height:1.75;color:var(--warm);max-width:600px;margin:0 auto}
+
+/* CONTENT SECTIONS */
+.content-section{padding:80px 48px}
+.content-inner{max-width:900px;margin:0 auto}
+.section-tag{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
+h2{font-family:'Fraunces',serif;font-size:clamp(32px,4vw,46px);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;color:var(--soil)}
+h2 em{font-style:italic;color:var(--moss);font-weight:300}
+.lead{font-size:18px;line-height:1.8;color:var(--bark);margin-bottom:32px}
+.body-text{font-size:16px;line-height:1.85;color:var(--bark);margin-bottom:20px}
+.body-text strong{color:var(--terracotta);font-weight:600}
+
+/* PROBLEM SECTION */
+.problem{background:var(--white)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
+.problem-stat-block{background:var(--sand);border-radius:20px;padding:36px;border:1px solid rgba(44,26,14,0.08)}
+.problem-stat-num{font-family:'Fraunces',serif;font-size:56px;font-weight:900;color:var(--terracotta);line-height:1;margin-bottom:8px}
+.problem-stat-label{font-size:15px;color:var(--bark);line-height:1.6}
+.problem-list{list-style:none}
+.problem-list li{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(44,26,14,0.08);font-size:16px;color:var(--bark);line-height:1.6}
+.problem-list li:last-child{border-bottom:none}
+.problem-list-icon{width:32px;height:32px;border-radius:50%;background:var(--terracotta);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px}
+
+/* SOLUTION */
+.solution{background:var(--cream)}
+.solution-steps{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.solution-card{background:var(--white);border-radius:20px;padding:36px;border:1px solid rgba(44,26,14,0.08);position:relative;overflow:hidden}
+.solution-card::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--field)}
+.solution-card h3{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--soil);margin-bottom:12px;letter-spacing:-.5px}
+.solution-card p{font-size:15px;color:var(--bark);line-height:1.7}
+.solution-card-num{font-family:'Fraunces',serif;font-size:48px;font-weight:900;color:var(--lime);opacity:.3;position:absolute;top:16px;right:24px}
+
+/* COUNTRIES */
+.countries-section{background:var(--moss);color:var(--white)}
+.countries-inner{max-width:900px;margin:0 auto;text-align:center}
+.countries-section h2{color:var(--white)}
+.countries-section h2 em{color:var(--lime)}
+.countries-section .lead{color:rgba(255,255,255,0.75)}
+.country-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.country-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:24px 16px;text-align:center;transition:all .3s}
+.country-card:hover{background:rgba(255,255,255,0.14);transform:translateY(-3px)}
+.country-flag{font-size:36px;display:block;margin-bottom:10px}
+.country-name{font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px}
+.country-detail{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4}
+
+/* IMPACT BREAKDOWN */
+.impact-breakdown{background:var(--white)}
+.impact-breakdown-inner{max-width:900px;margin:0 auto}
+.impact-flow{display:flex;flex-direction:column;gap:0;margin-top:48px}
+.flow-item{display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:flex-start;padding-bottom:48px;position:relative}
+.flow-item::before{content:'';position:absolute;left:39px;top:64px;bottom:0;width:2px;background:rgba(44,26,14,0.08)}
+.flow-item:last-child::before{display:none}
+.flow-item:last-child{padding-bottom:0}
+.flow-num{width:64px;height:64px;border-radius:50%;background:var(--field);color:var(--white);font-family:'Fraunces',serif;font-size:26px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+.flow-content h3{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--soil);margin-bottom:10px;margin-top:16px;letter-spacing:-.5px}
+.flow-content p{font-size:15px;color:var(--bark);line-height:1.7}
+.flow-content strong{color:var(--terracotta);font-weight:600}
+
+/* PARTNERS */
+.partners{background:var(--sand)}
+.partners-inner{max-width:900px;margin:0 auto}
+.partner-list{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.partner-card{background:var(--white);border-radius:16px;padding:28px;border:1px solid rgba(44,26,14,0.08);display:flex;gap:16px;align-items:flex-start}
+.partner-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.partner-card h4{font-size:16px;font-weight:600;color:var(--soil);margin-bottom:6px}
+.partner-card p{font-size:14px;color:var(--bark);line-height:1.6}
+.partner-card a{font-size:13px;color:var(--moss);font-weight:600;text-decoration:none;margin-top:8px;display:inline-block}
+.partner-card a:hover{text-decoration:underline}
+
+/* CTA */
+.cta{background:var(--terracotta);text-align:center;padding:80px 48px}
+.cta-inner{max-width:700px;margin:0 auto}
+.cta h2{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,56px);font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px}
+.cta h2 em{font-style:italic;color:var(--sun);font-weight:300}
+.cta p{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:40px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-btn-main{background:var(--sun);color:var(--soil);padding:16px 40px;border-radius:100px;font-size:16px;font-weight:700;text-decoration:none;transition:all .25s;display:inline-block}
+.cta-btn-main:hover{background:var(--white);transform:translateY(-2px)}
+.cta-btn-back{background:transparent;color:var(--white);padding:16px 36px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.4);transition:all .25s;display:inline-block}
+.cta-btn-back:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--soil);color:var(--warm);padding:40px 48px}
+.footer-bottom{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:13px;color:rgba(212,184,150,0.6)}
+.footer-logo{font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:var(--white)}
+.footer-logo span{color:var(--terracotta)}
+.footer-heart{color:var(--terracotta)}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  .nav-mobile-btn{display:flex}
+  .page-hero{padding:110px 24px 60px}
+  .content-section{padding:56px 24px}
+  .problem-grid{grid-template-columns:1fr}
+  .solution-steps{grid-template-columns:1fr}
+  .country-grid{grid-template-columns:repeat(2,1fr)}
+  .flow-item{grid-template-columns:56px 1fr;gap:20px}
+  .flow-item::before{left:27px}
+  .partner-list{grid-template-columns:1fr}
+  .cta{padding:60px 24px}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a class="nav-logo" href="cancha.html">Cancha<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="cancha-mission.html" class="active">Mission</a></li>
+    <li><a href="cancha.html#impact">Impact</a></li>
+    <li><a href="cancha.html#about">About</a></li>
+    <li><a href="cancha.html#app">App</a></li>
+    <li><a href="https://www.gofundme.com/f/give-kids-in-central-america-a-chance-to-play" target="_blank" class="nav-donate">Donate</a></li>
+  </ul>
+  <button class="nav-mobile-btn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="cancha.html" onclick="toggleMenu()">Home</a>
+  <a href="cancha-mission.html" onclick="toggleMenu()">Mission</a>
+  <a href="cancha.html#impact" onclick="toggleMenu()">Impact</a>
+  <a href="cancha.html#about" onclick="toggleMenu()">About</a>
+  <a href="https://www.gofundme.com/f/give-kids-in-central-america-a-chance-to-play" target="_blank" onclick="toggleMenu()">Donate</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="field-pattern"></div>
+  <div class="page-hero-inner fade-in">
+    <div class="breadcrumb">
+      <a href="cancha.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      Our Mission
+    </div>
+    <h1>Why Cancha <em>exists.</em></h1>
+    <p class="page-hero-sub">Every child deserves access to sport. Every athlete deserves a second chance. This is how we make both happen — and why it matters more than ever.</p>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section class="content-section problem">
+  <div class="content-inner">
+    <div class="fade-in">
+      <div class="section-tag">The problem</div>
+      <h2>Millions of kids can't <em>afford to play.</em></h2>
+      <p class="lead">Across Central America, soccer is more than a sport. It's culture, community, and for many children, the only safe place they have. But access to equipment — even a pair of cleats — is out of reach for millions of families living in poverty.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="fade-in">
+        <div class="problem-stat-block">
+          <div class="problem-stat-num">60%</div>
+          <div class="problem-stat-label">of children in Central America live below the poverty line, making basic sports equipment completely unaffordable for most families.</div>
+        </div>
+        <div class="problem-stat-block" style="margin-top:20px">
+          <div class="problem-stat-num">7</div>
+          <div class="problem-stat-label">countries across Central America where youth soccer programs are desperately underfunded and undersupplied.</div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <ul class="problem-list">
+          <li>
+            <div class="problem-list-icon">1</div>
+            <div>Children in rural communities often play barefoot on concrete or dirt lots with no proper ball, no cleats, and no protective equipment.</div>
+          </li>
+          <li>
+            <div class="problem-list-icon">2</div>
+            <div>Youth soccer programs in Guatemala, Honduras, and Nicaragua frequently shut down not because of lack of passion — but lack of gear.</div>
+          </li>
+          <li>
+            <div class="problem-list-icon">3</div>
+            <div>Without access to organized sport, children in at-risk communities lose one of the most powerful tools for staying safe, healthy, and hopeful.</div>
+          </li>
+          <li>
+            <div class="problem-list-icon">4</div>
+            <div>A single pair of cleats can cost more than a week's wages for a family — meaning the beautiful game stays out of reach for the kids who love it most.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="content-section solution">
+  <div class="content-inner">
+    <div class="fade-in">
+      <div class="section-tag">Our solution</div>
+      <h2>What Cancha <em>does about it.</em></h2>
+      <p class="lead">Cancha is a youth-led nonprofit that collects and funds soccer gear, distributes it through verified partner organizations on the ground, and builds a community of athlete storytellers who fund every drive.</p>
+    </div>
+    <div class="solution-steps">
+      <div class="solution-card fade-in">
+        <div class="solution-card-num">01</div>
+        <h3>We receive donations</h3>
+        <p>Through our GoFundMe campaign and Cancha website, we collect funds from donors who believe every kid deserves a field to play on. Every dollar is tracked and reported.</p>
+      </div>
+      <div class="solution-card fade-in">
+        <div class="solution-card-num">02</div>
+        <h3>We purchase gear</h3>
+        <p>We work with partner organizations like AFJA and GlobalGiving to identify exactly what each community needs — cleats, jerseys, balls, shin guards — and purchase it directly.</p>
+      </div>
+      <div class="solution-card fade-in">
+        <div class="solution-card-num">03</div>
+        <h3>We ship & distribute</h3>
+        <p>Gear is sent through verified local organizations in each country who distribute it directly to youth soccer programs, schools, and community leagues where kids are waiting.</p>
+      </div>
+      <div class="solution-card fade-in">
+        <div class="solution-card-num">04</div>
+        <h3>We share their stories</h3>
+        <p>Through the Back in the Game app, we share real updates from the children who received gear — so every donor can see the face behind their donation and the difference it made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section class="content-section countries-section">
+  <div class="countries-inner">
+    <div class="fade-in">
+      <div class="section-tag" style="color:var(--lime)">Where we work</div>
+      <h2>All 7 countries of <em>Central America.</em></h2>
+      <p class="lead">Cancha serves every country in Central America. No community is too small, no field too far.</p>
+    </div>
+    <div class="country-grid">
+      <div class="country-card fade-in">
+        <span class="country-flag">🇬🇹</span>
+        <div class="country-name">Guatemala</div>
+        <div class="country-detail">Rural youth academies · AFJA partnership</div>
+      </div>
+      <div class="country-card fade-in">
+        <span class="country-flag">🇸🇻</span>
+        <div class="country-name">El Salvador</div>
+        <div class="country-detail">Community soccer academies · Los Amates</div>
+      </div>
+      <div class="country-card fade-in">
+        <span class="country-flag">🇭🇳</span>
+        <div class="country-name">Honduras</div>
+        <div class="country-detail">At-risk youth programs · San Pedro Sula</div>
+      </div>
+      <div class="country-card fade-in">
+        <span class="country-flag">🇳🇮</span>
+        <div class="country-name">Nicaragua</div>
+        <div class="country-detail">Girls soccer · ages 5–20 · Granada</div>
+      </div>
+      <div class="country-card fade-in">
+        <span class="country-flag">🇨🇷</span>
+        <div class="country-name">Costa Rica</div>
+        <div class="country-detail">Youth soccer & community building</div>
+      </div>
+      <div class="country-card fade-in">
+        <span class="country-flag">🇵🇦</span>
+        <div class="country-name">Panama</div>
+        <div class="country-detail">Youth sports & leadership programs</div>
+      </div>
+      <div class="country-card fade-in">
+        <span class="country-flag">🇧🇿</span>
+        <div class="country-name">Belize</div>
+        <div class="country-detail">Access to sport for underserved youth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW FUNDS ARE USED -->
+<section class="content-section impact-breakdown">
+  <div class="impact-breakdown-inner">
+    <div class="fade-in">
+      <div class="section-tag">Transparency</div>
+      <h2>Exactly how your <em>donation helps.</em></h2>
+      <p class="lead">We believe donors deserve to know exactly where their money goes. Here is the complete journey of every dollar donated to Cancha.</p>
+    </div>
+    <div class="impact-flow">
+      <div class="flow-item fade-in">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h3>Your donation arrives</h3>
+          <p>Donations come in through our GoFundMe campaign. <strong>100% of funds collected go directly toward purchasing soccer gear</strong> — no overhead, no administrative fees taken from donations. Cancha is a student-led organization operating on zero salary.</p>
+        </div>
+      </div>
+      <div class="flow-item fade-in">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h3>We identify the need</h3>
+          <p>Through our partner organizations already on the ground in Central America, we identify which communities have the most urgent need — <strong>which programs are running out of gear, which kids are playing barefoot, which leagues are about to shut down.</strong></p>
+        </div>
+      </div>
+      <div class="flow-item fade-in">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h3>Gear is purchased & shipped</h3>
+          <p>We purchase cleats, jerseys, shin guards, soccer balls, and cones — the essentials that make organized soccer possible. <strong>Gear is sourced locally where possible</strong> to support local economies and reduce shipping costs.</p>
+        </div>
+      </div>
+      <div class="flow-item fade-in">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <h3>Kids receive it directly</h3>
+          <p>Partner organizations distribute gear directly to youth at their academies and community programs. <strong>We verify every delivery</strong> and share photos and updates so donors can see exactly who their generosity reached.</p>
+        </div>
+      </div>
+      <div class="flow-item fade-in">
+        <div class="flow-num">5</div>
+        <div class="flow-content">
+          <h3>Stories come back to the community</h3>
+          <p>The children who receive gear share their stories through the Back in the Game app — inspiring athletes here who are going through their own setbacks, and <strong>closing the loop between two communities that need each other.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="content-section partners">
+  <div class="partners-inner">
+    <div class="fade-in">
+      <div class="section-tag">Our partners</div>
+      <h2>Organizations we <em>work with.</em></h2>
+      <p class="body-text">Cancha doesn't work alone. We partner with established organizations already doing the work on the ground in Central America to make sure every dollar reaches the right hands.</p>
+    </div>
+    <div class="partner-list">
+      <div class="partner-card fade-in">
+        <div class="partner-icon">⚽</div>
+        <div>
+          <h4>AFJA — Academia de Fútbol Juvenil</h4>
+          <p>A verified nonprofit with youth soccer academies across Guatemala and El Salvador. AFJA was a Nike Social Impact Grant recipient and MLS Community MVP Award nominee. They work directly in rural communities.</p>
+          <a href="https://www.la2la.org/donate" target="_blank">Visit AFJA →</a>
+        </div>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-icon">🌍</div>
+        <div>
+          <h4>GlobalGiving</h4>
+          <p>A vetted global platform connecting nonprofits in Honduras, Nicaragua, Costa Rica, Panama, and Belize with donors worldwide. All projects are independently verified for impact and transparency.</p>
+          <a href="https://www.globalgiving.org" target="_blank">Visit GlobalGiving →</a>
+        </div>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-icon">📱</div>
+        <div>
+          <h4>Back in the Game App</h4>
+          <p>Cancha's companion platform connects recovering athletes with AI mentors and community stories. Every story shared on the app generates gear points that fund Central American drives.</p>
+          <a href="https://stacyguevara0729.github.io/Back-In-The-Games/" target="_blank">Open the app →</a>
+        </div>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-icon">🤝</div>
+        <div>
+          <h4>Become a partner</h4>
+          <p>Are you an organization working with youth in Central America? We'd love to connect. Cancha is actively looking to expand its network of verified ground-level partners across all 7 countries.</p>
+          <a href="https://www.gofundme.com/f/give-kids-in-central-america-a-chance-to-play" target="_blank">Get in touch →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner fade-in">
+    <h2>Be part of <em>the field.</em></h2>
+    <p>Every child in Central America who picks up a soccer ball for the first time — because of gear you helped provide — is proof that one act of generosity can change a life. Join Cancha today.</p>
+    <div class="cta-btns">
+      <a href="https://www.gofundme.com/f/give-kids-in-central-america-a-chance-to-play" target="_blank" class="cta-btn-main">Donate on GoFundMe</a>
+      <a href="cancha.html" class="cta-btn-back">Back to Cancha home</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-logo">Cancha<span>.</span></div>
+    <p>© 2025 Cancha · Founded by Stacy Guevara · Long Island, NY</p>
+    <p>Every field matters. Every kid deserves to play. <span class="footer-heart">♥</span></p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
+window.addEventListener('scroll',function(){
+  var nav = document.getElementById('navbar');
+  nav.style.boxShadow = window.scrollY > 50 ? '0 2px 24px rgba(44,26,14,0.08)' : 'none';
+});
+document.addEventListener('click',function(e){
+  var menu = document.getElementById('mobileMenu');
+  if(menu.classList.contains('open') && !menu.contains(e.target) && !e.target.closest('.nav-mobile-btn')){
+    menu.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
